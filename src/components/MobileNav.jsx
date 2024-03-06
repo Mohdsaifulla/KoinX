@@ -8,10 +8,16 @@ const MobileNav = ({ handleNavbar, active }) => {
       {active ? (
         <div>
           <ul className="flex  sm:hidden flex-col justify-start items-start gap-6 font-semibold cursor-pointer absolute top-0 right-0 p-4 rounded-l-2xl shadow-xl backdrop-blur-lg">
-            <button onClick={handleNavbar} className="flex justify-between items-center gap-4">
+            <button
+              onClick={handleNavbar}
+              className="flex justify-between items-center gap-4"
+            >
               <IoCloseSharp className="text-2xl font-semibold hover:scale-110" />
-              <ThemeToggle/>
             </button>
+            <li className="flex justify-center items-center gap-2">
+              Theme:
+              <ThemeToggle />
+            </li>
             <li>Crypto Taxe</li>
             <li>Fee Tools</li>
             <li>Resource Center</li>
