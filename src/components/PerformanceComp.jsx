@@ -1,7 +1,7 @@
 import React from "react";
 
 const PerformanceComp = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="pt-6 p-2">
       <div className="flex gap-4 pb-4 flex-wrap">
@@ -20,7 +20,7 @@ const PerformanceComp = ({ data }) => {
             <h1>Performance</h1>
           </div>
           {data &&
-            [data].map((item) => (
+            [data]?.map((item) => (
               <div key={item?.id} className="">
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">

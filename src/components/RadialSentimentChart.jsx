@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
 const RadialSentimentChart = ({ SentimentUp }) => {
-  console.log(SentimentUp);
+  //   console.log(SentimentUp);
   const [chartState, setChartState] = useState({
     series: [40],
     options: {

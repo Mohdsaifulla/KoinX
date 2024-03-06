@@ -4,6 +4,7 @@ import useFetchApi from "../hooks/useFetchApi";
 import Dropdown from "./Dropdown";
 import PerformanceComp from "./PerformanceComp";
 import Sentiment from "./Sentiment";
+import AboutCoin from "./AboutCoin";
 
 const CryptoCurrencies = () => {
   const { data, handleCoinId, coinId } = useFetchApi();
@@ -47,12 +48,13 @@ const CryptoCurrencies = () => {
         </div>
         <div>
           <Sentiment
-            SentimentUp={data.sentiment_votes_up_percentage}
-            sentimentDown={data.sentiment_votes_down_percentage}
+            SentimentUp={data?.sentiment_votes_up_percentage}
+            sentimentDown={data?.sentiment_votes_down_percentage}
           />
         </div>
-        <div>
-          
+        <div className="pt-8 shadow-xl rounded-lg p-2">
+          <AboutCoin name={data?.name} data={data}
+/>
         </div>
       </div>
     </>

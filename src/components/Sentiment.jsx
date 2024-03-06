@@ -3,8 +3,8 @@ import { BsCalendar4Event } from "react-icons/bs";
 import { IoMdTrendingUp } from "react-icons/io";
 import RadicalSentimentChart from "./RadialSentimentChart";
 const Sentiment = ({ SentimentUp, sentimentDown }) => {
-  console.log(sentimentDown);
-  console.log(SentimentUp);
+  // console.log(sentimentDown);
+  // console.log(SentimentUp);
 
   return (
     <div className="shadow-xl p-2">
