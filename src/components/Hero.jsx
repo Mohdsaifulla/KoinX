@@ -9,7 +9,6 @@ const Hero = () => {
   <div className='flex flex-col sm:flex-row'>
     <div className='px-6 pt-10 flex-1'>
         <CryptoCurrencies/> 
-        <AllTrending/>
     </div>
     <div>
       <TrendingCoins/>

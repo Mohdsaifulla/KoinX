@@ -32,8 +32,8 @@ const RadialSentimentChart = ({ SentimentUp }) => {
     <div>
       <div id="chart">
         <ReactApexChart
-          options={chartState.options}
-          series={chartState.series}
+          options={chartState?.options}
+          series={chartState?.series}
           type="radialBar"
           height={350}
         />

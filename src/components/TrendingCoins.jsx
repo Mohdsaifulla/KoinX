@@ -2,7 +2,7 @@ import React from 'react'
 import useFetchTrending from "../hooks/useFetchTrending"
 const TrendingCoins = () => {
   const TrendingCoin=useFetchTrending()
-  console.log(TrendingCoin)
+  // console.log(TrendingCoin)
     
   return (
     <div>TrendingCoins</div>

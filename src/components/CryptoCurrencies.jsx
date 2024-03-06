@@ -5,6 +5,7 @@ import Dropdown from "./Dropdown";
 import PerformanceComp from "./PerformanceComp";
 import Sentiment from "./Sentiment";
 import AboutCoin from "./AboutCoin";
+import AllTrending from "./AllTrending";
 
 const CryptoCurrencies = () => {
   const { data, handleCoinId, coinId } = useFetchApi();
@@ -55,6 +56,10 @@ const CryptoCurrencies = () => {
         <div className="pt-8 shadow-xl rounded-lg p-2">
           <AboutCoin name={data?.name} data={data}
 />
+        </div>
+        <div>
+        <AllTrending/>
+
         </div>
       </div>
     </>
