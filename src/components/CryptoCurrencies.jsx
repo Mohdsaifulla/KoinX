@@ -57,7 +57,7 @@ const CryptoCurrencies = () => {
           <AboutCoin name={data?.name} data={data}
 />
         </div>
-        <div>
+        <div className="flex justify-center items-center">
         <AllTrending/>
 
         </div>

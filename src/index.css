@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.scrollTrending{
+    overflow-x: scroll;
+    max-width: 60rem;
+}
+
+.scrollTrending::-webkit-scrollbar {
+
+    display: none;
+  }
