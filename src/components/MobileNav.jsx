@@ -2,6 +2,7 @@ import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ThemeToggle from "./ThemeToggle";
+import { Link } from "react-router-dom";
 const MobileNav = ({ handleNavbar, active }) => {
   return (
     <>
@@ -18,11 +19,17 @@ const MobileNav = ({ handleNavbar, active }) => {
               Theme:
               <ThemeToggle />
             </li>
-            <li>Crypto Taxe</li>
-            <li>Fee Tools</li>
-            <li>Resource Center</li>
+            <li>
+              <Link to="/crypto">Crypto Taxe</Link>
+            </li>
+            <li>
+              <Link to="/tools">Fee Tools </Link>
+            </li>
+            <li>
+              <Link to="/resource">Resource Center</Link>
+            </li>
             <button className="bg-blue-500 p-2 rounded-lg text-white">
-              Get Started
+              <Link to="/getStarted"> Get Started</Link>
             </button>
           </ul>
         </div>

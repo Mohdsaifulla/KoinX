@@ -17,40 +17,40 @@ const PerformanceComp = ({ data }) => {
       <div>
         <div className="pt-6 shadow-xl p-2 rounded-xl">
           <div>
-            <h1>Performance</h1>
+            <h1 className="font-semibold text-xl pb-2">Performance</h1>
           </div>
           {data &&
             [data]?.map((item) => (
               <div key={item?.id} className="">
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">
-                    <p>Today Low</p>
+                    <p className="text-sm">Today Low</p>
                     <p>{item?.market_data?.low_24h?.usd}</p>
                   </div>
-                  <div className="bg-red-400 h-1 w-96">
+                  <div className="bg-gradient-to-r from-red-500 to-green-300 h-1 w-96 rounded-lg">
                     <div></div>
                   </div>
-                  <div>
-                    <p>today high</p>
+                  <div className="flex flex-col justify-end items-end">
+                    <p className="text-sm">Today high</p>
                     <p>{item?.market_data?.high_24h?.usd}</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">
-                    <p>52 week low</p>
+                    <p className="text-sm">52W Low</p>
                     <p>{365 * item?.market_data?.low_24h?.usd}</p>
                   </div>
-                  <div className="bg-red-400 h-1 w-96">
+                  <div className="bg-gradient-to-r from-red-500 to-green-300 rounded-lg h-1 w-96">
                     <div></div>
                   </div>
-                  <div>
-                    <p>52week high</p>
+                  <div className="flex flex-col justify-end items-end">
+                    <p className="text-sm">52W High</p>
                     <p>{365 * item?.market_data?.high_24h?.usd}</p>
                   </div>
                 </div>
                 <div>
                   <div>
-                    <h1>Fundamentals</h1>
+                    <h1 className="font-semibold pt-2 pb-2">Fundamentals</h1>
                   </div>
                   <div className="flex  sm:flex-row flex-col justify-between">
                     <div className="flex justify-between">
@@ -68,7 +68,7 @@ const PerformanceComp = ({ data }) => {
                         <p>Market Cap Rank</p>
                         <hr></hr>
                       </div>
-                      <div>
+                      <div className="flex flex-col justify-end items-end">
                         <p>${item?.market_data?.current_price?.usd}</p>
                         <hr></hr>
 
@@ -94,16 +94,25 @@ const PerformanceComp = ({ data }) => {
                     <div className="flex justify-between">
                       <div>
                         <p>Marke Cap</p>
+                        <hr></hr>
                         <p>Market Cap Ratio</p>
-
+                        <hr></hr>
                         <p>All-Time High</p>
+                        <hr></hr>
                         <p>All-Time Low</p>
+                        <hr></hr>
                       </div>
-                      <div>
+                      <div className="flex flex-col  items-end">
                         <p>${item?.market_data?.market_cap?.usd}</p>
-                        <p>{item?.market_data?.market_cap_fdv_ratio}</p>
-                        <p>{item?.market_data?.ath?.usd}</p>
-                        <p>{item?.market_data?.atl?.usd}</p>
+                        <hr></hr>
+                        <p className="px-2">
+                          {item?.market_data?.market_cap_fdv_ratio}
+                        </p>
+                        <hr></hr>
+                        <p>${item?.market_data?.ath?.usd}</p>
+                        <hr></hr>
+                        <p>${item?.market_data?.atl?.usd}</p>
+                        <hr></hr>
                       </div>
                     </div>
                   </div>

@@ -23,13 +23,13 @@ const CryptoCurrencies = () => {
                 {item.name}
                 <span className="uppercase px-2">{item.symbol}</span>
               </h1>
-              <span className="bg-gray-300 p-1 rounded-lg text-center">
-                Rank#{item?.market_cap_rank}
+              <span className="bg-gray-300 text-black p-1 rounded-lg text-center">
+                Rank #{item?.market_cap_rank}
               </span>
             </div>
             <div className="flex gap-2 font-semibold pt-4 p-2">
               <h1 className="text-xl">${item?.market_data?.high_24h?.usd}</h1>
-              <span className="bg-green-200 rounded-md px-1 text-gray-900 text-center">
+              <span className={`${item?.market_data?.price_change_percentage_24h>0?"bg-green-300 rounded-md px-1 text-gray-900 text-center":"bg-red-300 rounded-md px-1 text-gray-900 text-center"}`}>
                 {item?.market_data?.price_change_percentage_24h?.toFixed(2)}%
               </span>
 

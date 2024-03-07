@@ -16,7 +16,7 @@ const Graph = ({ coinId }) => {
           style: {
             fontSize: "14px",
             fontWeight: "bold",
-            // color: "#32ed28",
+            color: "#32ed28",
           },
         },
         stroke: {
@@ -24,20 +24,26 @@ const Graph = ({ coinId }) => {
         },
         xaxis: {
           type: "datetime",
+          labels: {
+            style: {
+              colors: "#9900FF",
+            },
+          },
         },
         dataLabels: {
           enabled: false,
         },
         yaxis: {
-          // colors:["#121212"],
           show: true,
           labels: {
             formatter: function (val) {
               return val.toFixed(2);
             },
+            style: {
+              colors: "#9900FF",
+            },
           },
         },
-        // colors: ["#32ed28"],
         tooltip: {
           shared: false,
           y: {
@@ -106,8 +112,46 @@ const Graph = ({ coinId }) => {
   return (
     <div className="pt-8">
       <div id="chart" className="">
-      <div className="toolbar flex justify-end">
+        <div className="toolbar flex justify-end gap-1">
           <button
+            className="border px-1"
+            id="one_month"
+            onClick={() =>
+              setChartState((prevChartData) => ({
+                ...prevChartData,
+                Price: {
+                  options: {
+                    ...prevChartData.Price.options,
+                    selection: 1 / 24,
+                  },
+                  series: prevChartData.Price.series,
+                },
+              }))
+            }
+          >
+            1H
+          </button>
+          &nbsp;
+          <button
+            className="border px-1"
+            id="six_months"
+            onClick={() =>
+              setChartState((prevChartData) => ({
+                ...prevChartData,
+                Price: {
+                  options: {
+                    ...prevChartData.Price.options,
+                    selection: 1,
+                  },
+                  series: prevChartData.Price.series,
+                },
+              }))
+            }
+          >
+            24H
+          </button>
+          <button
+            className="border px-1"
             id="one_month"
             onClick={() =>
               setChartState((prevChartData) => ({
@@ -126,6 +170,7 @@ const Graph = ({ coinId }) => {
           </button>
           &nbsp;
           <button
+            className="border px-1"
             id="six_months"
             onClick={() =>
               setChartState((prevChartData) => ({
@@ -140,10 +185,11 @@ const Graph = ({ coinId }) => {
               }))
             }
           >
-            1W
+            7D
           </button>
           &nbsp;
           <button
+            className="border px-1"
             id="one_year"
             onClick={() =>
               setChartState((prevChartData) => ({
@@ -151,17 +197,18 @@ const Graph = ({ coinId }) => {
                 Price: {
                   options: {
                     ...prevChartData.Price.options,
-                    selection: 30,
+                    selection: 90,
                   },
                   series: prevChartData.Price.series,
                 },
               }))
             }
           >
-            1M
+            3M
           </button>
           &nbsp;
           <button
+            className="border px-1"
             id="ytd"
             onClick={() =>
               setChartState((prevChartData) => ({
@@ -180,6 +227,7 @@ const Graph = ({ coinId }) => {
           </button>
           &nbsp;
           <button
+            className="border px-1"
             id="all"
             onClick={() =>
               setChartState((prevChartData) => ({
@@ -201,9 +249,6 @@ const Graph = ({ coinId }) => {
           options={chartState.Price.options}
           series={chartState.Price.series}
           type="area"
-          // height="400"
-          // width="600"
-          // className="sm:w-[500px] w-[400px]"
         />
       </div>
       <div id="html-dist"></div>

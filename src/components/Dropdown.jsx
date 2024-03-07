@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
-
-const Dropdown = ( {handleCoinId }) => {
+const Dropdown = ({ handleCoinId }) => {
   return (
     <div className="flex gap-2 pb-4">
       <div className="flex justify-center items-center">
@@ -16,13 +15,24 @@ const Dropdown = ( {handleCoinId }) => {
           name="selectCoin"
           style={{ width: "fit-content" }}
           onChange={handleCoinId}
+          className="border-none rounded-lg p-[0.4px] bg-transparent"
         >
-          <option value="bitcoin">Bitcoin (BTC) </option>
-          <option value="avalanche-2">Avalanche (AVAX)</option>
+          <option value="bitcoin" className="text-black">
+            Bitcoin (BTC){" "}
+          </option>
+          <option value="avalanche-2" className="text-black">
+            Avalanche (AVAX)
+          </option>
 
-          <option value="dogecoin">Dogecoin (DOGE)</option>
-          <option value="ethereum">Ethereum (ETH)</option>
-          <option value="solana">Solana (SOL)</option>
+          <option value="dogecoin" className="text-black">
+            Dogecoin (DOGE)
+          </option>
+          <option value="ethereum" className="text-black">
+            Ethereum (ETH)
+          </option>
+          <option value="solana" className="text-black">
+            Solana (SOL)
+          </option>
         </select>
       </div>
     </div>

@@ -7,12 +7,12 @@ const Sentiment = ({ SentimentUp, sentimentDown }) => {
   // console.log(SentimentUp);
 
   return (
-    <div className="shadow-xl p-2">
+    <div className="shadow-xl p-2 ">
       <div>
         <h1 className="font-semibold text-xl pt-2">Sentiment</h1>
         <p className="font-semibold pt-2 pb-2">Key Event</p>
       </div>
-      <div className="flex sm:flex-row flex-col items-center justify-center gap-4 overflow-x-scroll">
+      <div className="flex sm:flex-row flex-col items-center justify-center gap-4 overflow-x-scroll text-black">
         <div className="flex shadow-md rounded-md p-4 gap-2 text-justify bg-blue-200">
           <span className="pt-1">
             <BsCalendar4Event className="text-2xl font-bold rounded-full bg-blue-600 p-1" />
@@ -57,16 +57,16 @@ const Sentiment = ({ SentimentUp, sentimentDown }) => {
             <RadicalSentimentChart SentimentUp={SentimentUp} />
           </div>
           <div>
-            <div className="flex gap-2 justify-center items-center">
+            <div className="flex gap-2 justify-between items-center">
               <span className="text-xs">Sentiment Up</span>
               <div className="bg-green-300 w-40 h-1 rounded-lg">
                 <span></span>
               </div>
               <span>{SentimentUp}%</span>
             </div>
-            <div className="flex gap-2">
-            <span className="text-xs">Sentiment Low</span>
-            <div className="bg-red-300 w-40 h-1 rounded-lg">
+            <div className="flex gap-2 justify-between items-center">
+              <span className="text-xs">Sentiment Low</span>
+              <div className="bg-red-300 w-20 h-1 rounded-lg">
                 <span></span>
               </div>
               <span>{sentimentDown}%</span>
