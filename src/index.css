@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.scrollTrending{
+.scroll-trending{
     overflow-x: scroll;
     max-width: 60rem;
 }
 
-.scrollTrending::-webkit-scrollbar {
+.scroll-trending::-webkit-scrollbar {
 
     display: none;
   }
